@@ -1,6 +1,7 @@
 'use strict'
 
-var hours= ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM'];
+var hours= ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', 
+'3 PM', '4 PM', '5 PM', '6 PM', '7 PM'];
 
 // Objects
 var Seattle= {
@@ -13,20 +14,20 @@ var Seattle= {
     total: 0,
 
     customer_per_hour: function(){
-        for (var i=0 ; i < 14 ; i++) {   
-          this.customer_num.push(randomAge(this.min_custemor, this.max_custemor));
+        for (var i=0 ; i < hours.length ; i++) {   
+          this.customer_num.push(randomNumber(this.min_custemor, this.max_custemor));
           console.log(this.customer_num);
     }
   },
   cookies_purchased: function(){
-      for (var j=0; j<14; j++){
-          this.cookies_sold.push(Math.floor(multipacation(this.customer_num[j], this.avg_cookies)));
+      for (var j=0; j < hours.length ; j++){
+          this.cookies_sold.push(Math.ceil(multipacation(this.customer_num[j], this.avg_cookies)));
           console.log(this.cookies_sold);
       }
   },
 
   getTotal: function(){
-      for (var c=0; c<this.cookies_sold.length; c++){
+      for (var c=0 ; c < this.cookies_sold.length ; c++){
          this.total= this.total+ this.cookies_sold[c];
 
       }
@@ -35,14 +36,14 @@ var Seattle= {
 
 };
 
-console.log(Seattle.customer_per_hour());
+Seattle.customer_per_hour();
 console.log(Seattle.customer_num);
 
-console.log(Seattle.cookies_purchased());
+Seattle.cookies_purchased();
 console.log(Seattle.cookies_sold);
 
 
-console.log(Seattle.getTotal());
+Seattle.getTotal();
 console.log(Seattle.total);
 
 var Tokyo= {
@@ -56,13 +57,13 @@ var Tokyo= {
 
     customer_per_hour: function(){
         for (var i=0 ; i < 14 ; i++) {   
-          this.customer_num.push(randomAge(this.min_custemor, this.max_custemor));
+          this.customer_num.push(randomNumber(this.min_custemor, this.max_custemor));
           console.log(this.customer_num);
     }
   },
   cookies_purchased: function(){
       for (var j=0; j<14; j++){
-          this.cookies_sold.push(Math.floor(multipacation(this.customer_num[j], this.avg_cookies)));
+          this.cookies_sold.push(Math.ceil(multipacation(this.customer_num[j], this.avg_cookies)));
           console.log(this.cookies_sold);
       }
   },
@@ -77,13 +78,13 @@ var Tokyo= {
 
 };
 
-console.log(Tokyo.customer_per_hour());
+Tokyo.customer_per_hour();
 console.log(Tokyo.customer_num);
 
-console.log(Tokyo.cookies_purchased());
+Tokyo.cookies_purchased();
 console.log(Tokyo.cookies_sold);
 
-console.log(Tokyo.getTotal());
+Tokyo.getTotal();
 console.log(Tokyo.total);
 
 var Dubai= {
@@ -97,13 +98,13 @@ var Dubai= {
 
     customer_per_hour: function(){
         for (var i=0 ; i < 14 ; i++) {   
-          this.customer_num.push(randomAge(this.min_custemor, this.max_custemor));
+          this.customer_num.push(randomNumber(this.min_custemor, this.max_custemor));
           console.log(this.customer_num);
     }
   },
   cookies_purchased: function(){
       for (var j=0; j<14; j++){
-          this.cookies_sold.push(Math.floor(multipacation(this.customer_num[j], this.avg_cookies)));
+          this.cookies_sold.push(Math.ceil(multipacation(this.customer_num[j], this.avg_cookies)));
           console.log(this.cookies_sold);
       }
   },
@@ -117,13 +118,13 @@ var Dubai= {
 
 };
 
-console.log(Dubai.customer_per_hour());
+Dubai.customer_per_hour();
 console.log(Dubai.customer_num);
 
-console.log(Dubai.cookies_purchased());
+Dubai.cookies_purchased();
 console.log(Dubai.cookies_sold);
 
-console.log(Dubai.getTotal());
+Dubai.getTotal();
 console.log(Dubai.total);
 
 
@@ -138,13 +139,13 @@ var Paris= {
 
     customer_per_hour: function(){
         for (var i=0 ; i < 14 ; i++) {   
-          this.customer_num.push(randomAge(this.min_custemor, this.max_custemor));
+          this.customer_num.push(randomNumber(this.min_custemor, this.max_custemor));
           console.log(this.customer_num);
     }
   },
   cookies_purchased: function(){
       for (var j=0; j<14; j++){
-          this.cookies_sold.push(Math.floor(multipacation(this.customer_num[j], this.avg_cookies)));
+          this.cookies_sold.push(Math.ceil(multipacation(this.customer_num[j], this.avg_cookies)));
           console.log(this.cookies_sold);
       }
   },
@@ -159,13 +160,13 @@ var Paris= {
 
 };
 
-console.log(Paris.customer_per_hour());
+Paris.customer_per_hour();
 console.log(Paris.customer_num);
 
-console.log(Paris.cookies_purchased());
+Paris.cookies_purchased();
 console.log(Paris.cookies_sold);
 
-console.log(Paris.getTotal());
+Paris.getTotal();
 console.log(Paris.total);
 
 
@@ -180,16 +181,14 @@ var Lima= {
 
     customer_per_hour: function(){
         for (var i=0 ; i < 14 ; i++) {   
-          this.customer_num.push(randomAge(this.min_custemor, this.max_custemor));
+          this.customer_num.push(randomNumber(this.min_custemor, this.max_custemor));
           console.log(this.customer_num);
     }
   },
   cookies_purchased: function(){
-     // var total=0;
       for (var j=0; j<14 ; j++){
-          this.cookies_sold.push(Math.floor(multipacation(this.customer_num[j], this.avg_cookies)));
+          this.cookies_sold.push(Math.ceil(multipacation(this.customer_num[j], this.avg_cookies)));
           console.log(this.cookies_sold);
-          //this.total=Total( this.cookies_sold[j]);
       }
 
   },
@@ -203,20 +202,20 @@ var Lima= {
 
 };
 
-console.log(Lima.customer_per_hour());
+Lima.customer_per_hour();
 console.log(Lima.customer_num);
 
-console.log(Lima.cookies_purchased());
+Lima.cookies_purchased();
 console.log(Lima.cookies_sold);
 
-console.log(Lima.getTotal());
+Lima.getTotal();
 console.log(Lima.total);
 
 
 
 // Declaring Functions
 
-function randomAge (min, max) {
+function randomNumber (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
@@ -252,15 +251,6 @@ for (var c=0; c < branches.length; c++ ){
         hourList.textContent = hours[j] + ': ' +  branches[c].cookies_sold[j] + ' cookies.' ;
         
         branchList.appendChild(hourList);
-        
-
-        //hourList.textContent= branches[c].total;
-        /*tot= total(branches[c].cookies_sold[j]);
-        totalList.textContent= total()
-        tot= total(branches[c].cookies_sold[j]);*/
- //       totalList.textContent= branches[4].total;
-        
-        //branchList.appendChild(tot);
     }
     totalList.textContent= 'Total: '+ branches[c].total;
     branchList.appendChild(totalList);
