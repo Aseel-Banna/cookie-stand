@@ -52,6 +52,10 @@ header h1{
     font-family:'Times New Roman', Times, serif;
 }
 
+main{
+    height: 100%;
+}
+
 
 
 footer{
@@ -66,7 +70,7 @@ footer p{
     left: 75px;
     top: 10px;
     font-size: large;
-    font-weight: bold;
-    
-    
+    font-weight: bold;    
 }
+
+
