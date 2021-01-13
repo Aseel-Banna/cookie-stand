@@ -18,6 +18,29 @@
         </nav>
     </header>
     <main id="main-id">
+        <form id="form-id">
+            <fieldset>
+                <legend>Adding New Location</legend>
+                <label for="branchName"> Branch Location: </label>
+                <input type="text" name="branchName" required id="branchName" placeholder="Branch Name">
+                <br>
+                <br>
+                <label for="min_customer"> Min Cutomer: </label>
+                <input type="number" name="min_customer" required min="0" max="20"  id="min_customer" placeholder="Min Customers">
+                <br>
+                <br>
+                <label for="max_customer"> Max Cutomer: </label>
+                <input type="number" name="max_customer" required min="21"  id="max_customer" placeholder="Max Customer">
+                <br>
+                <br>
+                <label for="avg_cookies"> Average Cookies Sold:</label>
+                <input type="number" name="avg_cookies" required step=".1" min="0" id="avg_cookies" placeholder="Average Cookies">
+                <br>
+                <br>
+                <button id="btn" type="submit">Enter</button>
+            </fieldset>
+        </form>
+        <h1>Table of Sales</h1>
         
     </main>
     <footer>
