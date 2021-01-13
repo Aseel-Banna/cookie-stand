@@ -179,9 +179,6 @@ function sum() {
 // creating the table
 function createTable() {
     parentMain = document.getElementById('main-id');
-    /*title = document.createElement('h1');
-    parentMain.appendChild(title);
-    title.textContent = 'Table of Sales';*/
     table = document.createElement('table');
     parentMain.appendChild(table);
 
@@ -210,19 +207,23 @@ function createHedeing() {
 // --------------------Event-------------------------------------
 function newLocation(event) {
     event.preventDefault();
-    // console.log(event.target);
+    //////////////
+    table.innerHTML= '';
     var bName = event.target.branchName.value;
     var minCustomer = parseInt(event.target.min_customer.value);
     var maxCustomer = parseInt(event.target.max_customer.value);
     var avgCookies = parseInt(event.target.avg_cookies.value);
-    // console.log(minCustomer, maxCustomer, avgCookies, bName);
-    table.innerHTML= '';
+
+    /////////////
+    newObject(bName, minCustomer, maxCustomer, avgCookies);
+    //table.innerHTML= '';
     createTable();
     createHedeing();
-    newObject(bName, minCustomer, maxCustomer, avgCookies); 
+    //newObject(bName, minCustomer, maxCustomer, avgCookies); 
     
     for (var i=0; i<branches.length; i++){
         branches[i].cookies=[];
+        branches[i].total=0;
         branches[i].customer_per_hour();
         branches[i].cookies_purchased();
         branches[i].total;
@@ -233,23 +234,21 @@ function newLocation(event) {
     table.appendChild(tableRow1);
     tableRow1.textContent = 'Total';
 
-        var total0 = [];
+    var total0 = [];
     var totalOfTotal = 0;
 
     for (var x = 0; x < branches.length; x++) {
-        totalOfTotal = totalOfTotal + branches[x].total;
+        
+        totalOfTotal = (totalOfTotal + branches[x].total);
     }
 
     for (var i = 0; i < hours.length; i++) {
         var a = 0;
         for (var x = 0; x < branches.length; x++) {
-            a = a + branches[x].cookies[i];
-            // console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',a)
+            a = (a + branches[x].cookies[i]);
         }
         total0.push(a);
-        
     }
-
     total0.push(totalOfTotal);
 
 
@@ -264,11 +263,6 @@ function newLocation(event) {
 
 function newObject(bName, minCustomer, maxCustomer, avgCookies) {
     var newBranch = new Location(bName, minCustomer, maxCustomer, avgCookies);
-    /*newBranch.customer_per_hour();
-    newBranch.cookies_purchased();
-    newBranch.total;
-    newBranch.render();
-    // console.log(newBranch);*/
 }
 
 var sub = document.getElementById('form-id');
